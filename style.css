@@ -31,14 +31,21 @@ body {
 	box-sizing: border-box;
 }
 
-.navbar {
+.navbar, .navbar-hidden {
 	width: 100%;
-	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0;
 	position: relative;
 	padding: 0 10px;
+}
+
+.navbar {
+	display: flex;
+}
+
+.navbar-hidden {
+	display: none;
 }
 
 .navbar-logo {
@@ -199,6 +206,7 @@ section.sec-features {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-column-gap: 15px;
 	box-sizing: border-box;
+	margin: 0 30px;
 }
 
 .features .features-container {
@@ -272,16 +280,16 @@ section#sec_premium {
 .plans {
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	box-sizing: border-box;
 	padding: 0 20px;
 	margin-bottom: 60px;
 }
 
 .plan-container {
-	flex-basis: 50%;
+	flex:1;
 	box-sizing: border-box;
 	margin: 12px;
-	max-width: 50%;
 }
 
 .plan-title {
@@ -434,6 +442,22 @@ a#collapsebutton img {
 	font-weight: 400;
 }
 
+/*burger*/
+.burger-menu {
+	background-color: black;
+	border: 0;
+	height: 100%;
+	width: 35px;
+	line-height: 0.2;
+}
+
+.burger-menu .bars {
+	display: block;
+	background: #fff;
+	height: 3px;
+	margin: 4px 0;
+}
+
 @media (min-width: 576px) {
 	.container {
 	    max-width: 540px;
@@ -446,14 +470,73 @@ a#collapsebutton img {
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 990px) {
 	.container {
 	    max-width: 960px;
 	}
+
 }
 	
 @media (min-width: 1200px) {
 	.container {
 	    max-width: 1170px;
+	}
+}
+
+@media (min-width: 100px) and (max-width: 767px) {
+	.plan-container {
+		flex-basis: 100%;
+	}
+}
+
+@media (min-width: 100px) and (max-width: 989px) {
+	.navbar {
+		display: none;
+	}
+
+	.navbar-hidden {
+		display: flex;
+	}
+
+	.header {
+		background: black;
+	}
+
+	.navbar-hidden .navbar-logo {
+		width: 90px;
+	}
+
+	.blue-header {
+		text-align: left;
+	}
+
+	.features {
+		grid-template-columns: 1fr;
+	}
+
+	.features-container {
+		margin-bottom: 25px;
+	}
+
+	.features .feature {
+		flex-direction: row;
+	}
+
+	.text-wrapper div {
+		justify-content: flex-start;
+	}
+
+	.feature img {
+		margin: 30px 10px 30px 10px;
+	}
+
+	.feature .text-wrapper h3{
+		text-align: left;
+		margin: 0;
+	}
+
+	.feature-summary {
+		text-align: left;
+		margin: 0;
 	}
 }
