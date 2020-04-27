@@ -83,7 +83,7 @@ body {
 	color: #D8D8D8;
 }
 
-.navbar-item a:hover  {
+.navbar-item a:hover,.social-media li a:hover,.bottom-links li a:hover {
 	color: #1ed760;
 }
 
@@ -444,6 +444,7 @@ a#collapsebutton img {
 
 /*burger*/
 .burger-menu {
+	display: none;
 	background-color: black;
 	border: 0;
 	height: 100%;
@@ -456,6 +457,96 @@ a#collapsebutton img {
 	background: #fff;
 	height: 3px;
 	margin: 4px 0;
+}
+
+
+.footer {
+	background: black;
+	color: #fff;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+
+footer {
+	display: flex;
+	width: 100%;
+}
+
+footer nav {
+	display: flex;
+	justify-content: space-around;
+	margin: 0 30px 50px 0;
+}
+
+.fn-anchor {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.footer-ul {
+	list-style-type: none;
+	margin-right: 40px;
+}
+
+.footer-ul li {
+	margin-bottom: 20px;
+}
+
+.footer-ul li:first-child {
+	color: #919496;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.footer-ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+}
+
+.social-media,.bottom-links ul {
+	list-style-type: none;
+	display: flex;
+}
+
+.social-media {
+	margin: 0 15px 0 auto;
+	padding: 0;
+}
+
+.social-media li,.bottom-links li  {
+	margin-left: 15px;
+}
+
+.social-media li a {
+	background: #222326;
+	font-size: 27px;
+	padding: 7px 15px;
+	border-radius: 50%;
+	color: #fff;
+}
+
+.bottom-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bottom-links ul {
+	display: flex;
+	padding: 0;
+}
+
+.bottom-links li a, .copyright {
+	color: #919496;
+	margin: 0;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: 400;
 }
 
 @media (min-width: 576px) {
@@ -487,23 +578,33 @@ a#collapsebutton img {
 	.plan-container {
 		flex-basis: 100%;
 	}
+
+	footer nav {
+		flex-wrap: wrap;
+	}
+
+	.footer-ul {
+		flex-basis: 100%;
+		margin-top: 20px;
+	}
 }
 
 @media (min-width: 100px) and (max-width: 989px) {
-	.navbar {
-		display: none;
-	}
-
-	.navbar-hidden {
-		display: flex;
-	}
 
 	.header {
 		background: black;
 	}
 
-	.navbar-hidden .navbar-logo {
+	.navbar-logo {
 		width: 90px;
+	}
+
+	.navbar-menu {
+		display: none;
+	}
+
+	.burger-menu {
+		display: block;
 	}
 
 	.blue-header {
@@ -539,4 +640,27 @@ a#collapsebutton img {
 		text-align: left;
 		margin: 0;
 	}
+
+	.footer {
+		padding-top:50px;
+	}
+
+	footer {
+		flex-wrap: wrap;
+	}
+
+	footer nav {
+		flex: 100%;
+	}
+
+	.footer-ul {
+		margin: 20px auto 0 0;
+		padding-left: 15px;
+	}
+
+	.social-media {
+		margin:0;
+	}
+
+
 }
